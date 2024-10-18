@@ -12,7 +12,7 @@ console.log("https://iamkunal9.github.io/links/");
 var isOpen = false;
 
 const pages = [
-  { name: 'Home', url: '/' },
+  { name: 'Home', url: 'index.html' },
   { name: 'About', url: 'about.html' },
   { name: 'Call for Papers', url: 'call-for-papers.html' },
   { name: 'Submission', url: 'submission.html' },
