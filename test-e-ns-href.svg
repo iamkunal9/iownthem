@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <a xlink:href="https://example.com"><text x="10" y="50">xlink:href https</text></a>
+  <a xmlns:y="http://www.w3.org/2000/svg" y:href="https://example.com"><text x="10" y="80">y:href ns</text></a>
+</svg>
