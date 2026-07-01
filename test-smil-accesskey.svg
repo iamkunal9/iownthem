@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .hidden { display: none; }
+    .shown { display: inline; fill: #ff0; font-size: 20px; }
+  </style>
+  <text x="10" y="40" fill="white" font-size="14">Press 'x' key to reveal hidden content</text>
+  <text x="10" y="65" fill="gray" font-size="11">(SMIL accessKey trigger — no onclick attribute)</text>
+  <g id="secret" class="hidden">
+    <set attributeName="class" begin="accessKey(x)" to="shown" fill="freeze"/>
+    <text x="10" y="130">REVEALED: theexploit.store/verify</text>
+  </g>
+  <!-- Also test Alt accessKey -->
+  <g id="secret2" class="hidden">
+    <set attributeName="class" begin="accessKey(z)" to="shown" fill="freeze"/>
+    <text x="10" y="170">KEY-Z REVEAL: attacker.com</text>
+  </g>
+</svg>
