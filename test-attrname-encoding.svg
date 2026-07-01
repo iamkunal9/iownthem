@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <a id="lnk">
+    <text x="10" y="50" fill="white">entity-encoded attributeName</text>
+    <!-- &#104; = h → decoded "href" by XML parser -->
+    <animate attributeName="&#104;ref" values="https://theexploit.store" begin="0s" fill="freeze"/>
+    <!-- &#120;link:href = xlink:href but entity-encoded prefix -->
+    <animate attributeName="hre&#102;" values="https://theexploit.store" begin="0s" fill="freeze"/>
+  </a>
+</svg>
