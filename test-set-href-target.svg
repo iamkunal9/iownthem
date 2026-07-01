@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .hidden { display: none; }
+    .visible { display: inline; fill: blue; font-size: 20px; }
+  </style>
+  <g id="btn1" cursor="pointer">
+    <rect x="10" y="10" width="150" height="40" fill="orange" rx="6"/>
+    <text x="85" y="36" text-anchor="middle" fill="white">Click me</text>
+  </g>
+  <text id="reveal" class="hidden" x="10" y="120">URL REVEALED: attacker.com</text>
+  <!-- set href="#reveal" targets element by ID -->
+  <set href="#reveal" attributeName="class" to="visible" begin="btn1.click" fill="freeze"/>
+  <set href="#btn1" attributeName="display" to="none" begin="btn1.click" fill="freeze"/>
+</svg>
