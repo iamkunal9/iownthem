@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <a id="lnk"><text x="10" y="50">Click</text>
+    <set onbegin="window.location='https://theexploit.store'" begin="0s" attributeName="href" to="https://theexploit.store"/>
+  </a>
+</svg>
