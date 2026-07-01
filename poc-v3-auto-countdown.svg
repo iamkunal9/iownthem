@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #0d0f1a; }
+    .hide { display: none; }
+    .show { display: inline; }
+    .t { fill: white; font-family: sans-serif; font-size: 14px; }
+    .cd { fill: #ff6b35; font-family: monospace; font-size: 24px; font-weight: bold; }
+    .url { fill: #4fc3f7; font-family: monospace; font-size: 16px; font-weight: bold; }
+  </style>
+  <rect class="bg" width="400" height="200"/>
+  <!-- Countdown using multiple time-triggered visibility -->
+  <text class="t" x="200" y="50" text-anchor="middle">Redirecting in</text>
+  <!-- Show "3" from 0-1s -->
+  <text class="cd show" x="200" y="90" text-anchor="middle" id="n3">3
+    <set attributeName="class" begin="1s" to="hide" fill="freeze"/>
+  </text>
+  <!-- Show "2" from 1-2s -->
+  <text class="cd hide" x="200" y="90" text-anchor="middle" id="n2">2
+    <set attributeName="class" begin="1s" to="show" fill="freeze"/>
+    <set attributeName="class" begin="2s" to="hide" fill="freeze"/>
+  </text>
+  <!-- Show "1" from 2-3s -->
+  <text class="cd hide" x="200" y="90" text-anchor="middle" id="n1">1
+    <set attributeName="class" begin="2s" to="show" fill="freeze"/>
+    <set attributeName="class" begin="3s" to="hide" fill="freeze"/>
+  </text>
+  <!-- URL revealed at 3s -->
+  <text class="url hide" x="200" y="130" text-anchor="middle">theexploit.store/verify
+    <set attributeName="class" begin="3s" to="show" fill="freeze"/>
+  </text>
+  <text class="t hide" x="200" y="165" text-anchor="middle">Copy URL above into your browser
+    <set attributeName="class" begin="3s" to="show" fill="freeze"/>
+  </text>
+</svg>
