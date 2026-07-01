@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <a href="javascript:alert(document.domain)">
+    <text x="50" y="100" font-size="24" fill="blue">Click here (SVG anchor XSS)</text>
+  </a>
+</svg>
