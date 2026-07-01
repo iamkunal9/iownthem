@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+  <a id="lnk5"><text x="10" y="50">Set href SVG2</text></a>
+  <set href="#lnk5" attributeName="href" to="https://theexploit.store" begin="0s"/>
+</svg>
