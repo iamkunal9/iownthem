@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path id="tp" d="M10,100 Q100,10 300,100"/>
+    <!-- SVG <cursor> element with href -->
+    <cursor id="cur" x="0" y="0" href="https://theexploit.store/cursor.png" xlink:href="https://theexploit.store/cursor2.png"/>
+  </defs>
+  
+  <!-- textPath href: references a path, not navigation -->
+  <!-- Does external href on textPath survive? -->
+  <text font-size="16" fill="white">
+    <textPath href="https://theexploit.store/#tp" startOffset="0%">External textPath href</textPath>
+    <textPath xlink:href="https://theexploit.store/#tp">xlink textPath href</textPath>
+    <textPath href="#tp">Same-page textPath href</textPath>
+  </text>
+  
+  <!-- SVG <a> with ping attribute - browser sends a POST to ping URL on click -->
+  <a href="#" ping="https://theexploit.store/ping">
+    <rect x="10" y="200" width="200" height="50" fill="orange" rx="6"/>
+    <text x="110" y="232" text-anchor="middle" fill="white">ping attribute test</text>
+  </a>
+</svg>
