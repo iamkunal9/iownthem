@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <animateTransform onbegin="alert(document.domain)" attributeName="transform" type="rotate" from="0" to="360" dur="1s" repeatCount="indefinite"/>
+</svg>
