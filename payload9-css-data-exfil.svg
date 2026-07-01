@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import "data:text/css,body{background:red}";
+    text { fill: blue; font-size: 20px; }
+    .secret::after { content: attr(data-val); }
+  </style>
+  <text x="10" y="50">CSS style survived (style-src unsafe-inline)</text>
+  <text x="10" y="100" data-val="localStorage check">CSS attr exfil test</text>
+</svg>
