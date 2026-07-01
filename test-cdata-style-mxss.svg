@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+<style><![CDATA[
+* { margin: 0; }
+]]></style>
+<style><![CDATA[
+.safe { fill: blue; }
+</style><img src=x onerror=alert(document.domain)><style>
+]]></style>
+<text x="10" y="50" class="safe">CDATA style mXSS test</text>
+</svg>
