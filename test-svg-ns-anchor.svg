@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="150" xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg">
+  <svg:a href="https://theexploit.store">
+    <svg:rect x="5" y="5" width="220" height="60" fill="blue" rx="8"/>
+    <svg:text x="115" y="42" text-anchor="middle" fill="white" font-size="18">svg:a href bypass</svg:text>
+  </svg:a>
+</svg>
