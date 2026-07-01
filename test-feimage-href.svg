@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="f1">
+      <!-- Can feImage href survive? It's a resource-loading href, not navigation -->
+      <feImage href="https://theexploit.store/feimage-test.png" result="src"/>
+      <feImage xlink:href="https://theexploit.store/xlink-feimage-test.png" result="src2"/>
+      <!-- Also test: feImage loading a data: SVG (img-src data: is allowed!) -->
+      <feImage href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" result="data-img"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="300" height="200" filter="url(#f1)" fill="blue"/>
+  <text x="10" y="100" fill="white">feImage href test</text>
+</svg>
