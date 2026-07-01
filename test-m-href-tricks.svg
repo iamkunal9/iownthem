@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Null byte in href -->
+  <a href="https://theexploit.store&#0;"><text x="10" y="30">null byte</text></a>
+  <!-- Newline before URL -->
+  <a href="&#10;https://theexploit.store"><text x="10" y="60">newline prefix</text></a>
+  <!-- Encoded slash in path -->
+  <a href="https:&#47;&#47;theexploit.store"><text x="10" y="90">encoded slashes</text></a>
+</svg>
