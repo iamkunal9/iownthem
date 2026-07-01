@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <a id="lnk" href="#">
+    <set attributeName="href" to="javascript:alert(document.domain)" begin="0s"/>
+    <text x="50" y="100" font-size="20">Click (set element)</text>
+  </a>
+</svg>
